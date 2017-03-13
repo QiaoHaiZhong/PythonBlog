@@ -1,0 +1,21 @@
+{% extends 'blogBase.html' %} 
+{% block content %}
+
+ 
+    <article class="blog-main">
+      <h3 class="am-article-title blog-title">
+        <a href="/blog/article?id={{ article.id }}">{{ article.title }}</a>
+      </h3>
+      <h4 class="am-article-meta blog-meta">by <a href="">open</a> posted on {{ article.pub_date }} under <a href="#">{{ article.label }}</a></h4>
+
+      <div class="am-g blog-content">
+        <div class="am-u-lg-15">
+          {{ article.body | safe }}
+        </div>
+        
+      </div>
+    </article>
+
+    <hr class="am-article-divider blog-hr">
+
+{% endblock %} 

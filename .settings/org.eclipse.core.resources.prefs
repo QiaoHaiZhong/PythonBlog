@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+encoding//pyblog/admin/admin.py=utf-8
+encoding//pyblog/blog/blog.py=utf-8
+encoding//pyblog/config/config.py=utf-8
+encoding//pyblog/model/createTable.py=utf-8
+encoding//pyblog/run.py=utf-8
+encoding//pyblog/wsgi.py=utf8

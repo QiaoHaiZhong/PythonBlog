@@ -1,0 +1,186 @@
+
+<!doctype html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Hello Amaze UI</title>
+
+<!-- Set render engine for 360 browser -->
+<meta name="renderer" content="webkit">
+
+<!-- No Baidu Siteapp-->
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<link rel="icon" type="image/png"
+	href="{{ url_for('static',filename='i/favicon.png')}}">
+
+<!-- Add to homescreen for Chrome on Android -->
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="icon" sizes="192x192"
+	href="{{ url_for('static',filename='i/app-icon72x72@2x.png')}}">
+
+<!-- Add to homescreen for Safari on iOS -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Amaze UI" />
+<link rel="apple-touch-icon-precomposed"
+	href="{{ url_for('static',filename='i/app-icon72x72@2x.png')}}">
+
+<!-- Tile icon for Win8 (144x144 + tile color) -->
+<meta name="msapplication-TileImage"
+	content="{{ url_for('static',filename='i/app-icon72x72@2x.png')}}">
+<meta name="msapplication-TileColor" content="#0e90d2">
+
+<link rel="stylesheet"
+	href="{{ url_for('static',filename='css/amazeui.min.css')}}">
+<link rel="stylesheet"
+	href="{{ url_for('static',filename='css/app.css')}}">
+
+</head>
+<body>
+	<div class="am-g doc-am-g">
+		<div class="am-u-sm-6 am-u-md-4 am-u-lg-3">
+			&nbsp;&nbsp;&nbsp;&nbsp;</div>
+		<div class="am-u-sm-6 am-u-md-8 am-u-lg-9">
+			<label for="doc-ta-1">&nbsp;&nbsp;&nbsp;&nbsp;请输入查询日期</label>
+			<form method='post' action='/oneTime'>
+				<div class="am-g doc-am-g">
+					<div class=am-form-group>
+						<div class=am-u-sm-4>
+
+							<div class="am-input-group am-datepicker-date"
+								data-am-datepicker="{format: 'yyyy-mm-dd', viewMode: 'years'}">
+								<input type="text" class="am-form-field" name="oneStartTime"
+									placeholder="开始日期   yyyy-mm-dd"> <span
+									class="am-input-group-btn am-datepicker-add-on">
+									<button class="am-btn am-btn-default" type="button">
+										<span class="am-icon-calendar"></span>
+									</button>
+								</span>
+							</div>
+						</div>
+						<div class=am-u-sm-8>
+							<input id=search type=submit class="am-btn am-btn-default"
+								value='查询'> <input id=reset type=reset
+								class="am-btn am-btn-default" value='重置'>
+						</div>
+					</div>
+				</div>
+			</form>
+
+			<label for="doc-ta-1">&nbsp;&nbsp;&nbsp;&nbsp;请选择2个查询日期</label>
+			<form method='post' action='/twoTime'>
+				<div class="am-g doc-am-g">
+					<div class=am-form-group>
+						<div class=am-u-sm-4>
+							<div class="am-input-group am-datepicker-date"
+								data-am-datepicker="{format: 'yyyy-mm-dd', viewMode: 'years'}">
+								<input type="text" class="am-form-field" id="my-start"
+									name="twoStartTime" placeholder="开始日期   yyyy-mm-dd" readonly>
+								<span class="am-input-group-btn am-datepicker-add-on">
+									<button class="am-btn am-btn-default" type="button">
+										<span class="am-icon-calendar"></span>
+									</button>
+								</span>
+							</div>
+							<div class="am-input-group am-datepicker-date"
+								data-am-datepicker="{format: 'yyyy-mm-dd', viewMode: 'years'}">
+								<input type="text" class="am-form-field" name="twoEndTime"
+									placeholder="结束日期   yyyy-mm-dd" readonly> <span
+									class="am-input-group-btn am-datepicker-add-on">
+									<button class="am-btn am-btn-default" type="button">
+										<span class="am-icon-calendar"></span>
+									</button>
+								</span>
+							</div>
+
+						</div>
+						<div class=am-u-sm-8>
+							<input type=submit class="am-btn am-btn-default" value='查询'>
+							<input type=reset class="am-btn am-btn-default" value='重置'>
+						</div>
+
+					</div>
+				</div>
+			</form>
+
+			<form class="am-form" method='post' action='/textSql'>
+				<div class="am-g doc-am-g">
+					<div class=am-form-group>
+						<div class=am-u-sm-5>
+							<div class="am-form-group">
+								<hr>
+								<label for="doc-ta-1">请输入你想查询的SQL</label>
+								<textarea class="" rows="8" id="doc-ta-1" name=“textSql”></textarea>
+							</div>
+							<p>
+								<input type=submit class="am-btn am-btn-default" value='查询'>
+								<input type=reset class="am-btn am-btn-default" value='重置'>
+							</p>
+						</div>
+					</div>
+				</div>
+			</form>
+			<!--在这里编写你的代码-->
+
+
+			<div class="am-g doc-am-g">
+				<div class=am-form-group>
+					<div class=am-u-sm-8>
+						<table
+							class="am-table am-table-bordered am-table-stripedam-table-compact">
+							<span class="hljs-tag"><span class="hljs-title">
+									<thead>
+							</span></span>
+							<span class="hljs-tag"><span class="hljs-title"><tr>
+										<span class="hljs-tag"><span class="hljs-title"><th>PUid</th></span></span>
+										<span class="hljs-tag"><span class="hljs-title"><th>用户昵称</th></span></span>
+										<span class="hljs-tag"><span class="hljs-title"><th>订单号</th></span></span>
+										<span class="hljs-tag"><span class="hljs-title"><th>生成时间</th></span></span>
+										<span class="hljs-tag"><span class="hljs-title"><th>金币数</th></span></span>
+									</tr></span></span>
+							</thead>
+							</span>
+							</span> {% for i in range(0,lenCalist) %}
+
+							<tbody>
+								<span class="hljs-tag"><span class="hljs-title">
+										<tr>
+											<span class="hljs-tag"><span class="hljs-title"><td>{{
+														calist[i]['puid'] }}</td></span></span>
+											<span class="hljs-tag"><span class="hljs-title"><td>{{
+														calist[i]['name'].decode('utf-8') }}</td></span></span>
+											<span class="hljs-tag"><span class="hljs-title"><td>{{
+														calist[i]['orderNum'] }}</td></span></span>
+											<span class="hljs-tag"><span class="hljs-title"><td>{{
+														calist[i]['operTime'] }}</td></span></span>
+											<span class="hljs-tag"><span class="hljs-title"><td>{{
+														calist[i]['operCoin'] }}</td></span></span>
+										</tr>
+								</span></span>
+
+							</tbody>
+
+							{% endfor %}
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--[if (gte IE 9)|!(IE)]><!-->
+	<script src="{{ url_for('static',filename='js/jquery.min.js')}}"></script>
+	<!--<![endif]-->
+	<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="{{ url_for('static',filename='js/amazeui.ie8polyfill.min.js')}}"></script>
+<![endif]-->
+	<script src="{{ url_for('static',filename='js/amazeui.min.js')}}"></script>
+</body>
+</html>

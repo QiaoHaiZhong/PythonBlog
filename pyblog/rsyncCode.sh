@@ -1,0 +1,2 @@
+#!/bin/bash
+rsync -avrltc --progress --chmod=u=rwx,g=rx,o=rx --delete /Users/qhz/Documents/workspace/pyblog/*  pyshell@115.126.86.67::pyblog/  --password-file=/Users/qhz/Documents/workspace/pyblog/pyblog.pass

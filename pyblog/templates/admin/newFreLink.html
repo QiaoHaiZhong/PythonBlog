@@ -1,0 +1,77 @@
+{% extends 'base.html' %} {% block content %}
+
+<!-- content start -->
+<div class="admin-content">
+
+	<div class="am-cf am-padding">
+		<div class="am-fl am-cf">
+			<strong class="am-text-primary am-text-lg">管理友链</strong> / <small>添加友链</small>
+		</div>
+	</div>
+
+	<div class="am-tabs am-margin" data-am-tabs>
+		<ul class="am-tabs-nav am-nav am-nav-tabs">
+			<li><a href="#tab2">添加友链</a></li>
+			<li><a href="#tab3">管理友链</a></li>
+		</ul>
+		<div class="am-tabs-bd">
+			<div class="am-tab-panel am-fade" id="tab2">
+				<form class="am-form" method='post' action='/admin/addFreLink'>
+					<div class="am-g am-margin-top">
+						<div class="am-u-sm-4 am-u-md-2 am-text-right">友链地址</div>
+						<div class="am-u-sm-8 am-u-md-4">
+							<input type="text" class="am-input-sm" name="linkAddr">
+						</div>
+						<div class="am-hide-sm-only am-u-md-6">必填 (http://abc.com)</div>
+					</div>
+					<div class="am-g am-margin-top">
+						<div class="am-u-sm-4 am-u-md-2 am-text-right">友链站名</div>
+						<div class="am-u-sm-8 am-u-md-4">
+							<input type="text" class="am-input-sm" name="linkName">
+						</div>
+						<div class="am-hide-sm-only am-u-md-6">必填</div>
+					</div>
+					<div class="am-margin">
+						<button type="submit" class="am-btn am-btn-primary am-btn-xs">提交保存</button>
+						<button type="reset" class="am-btn am-btn-primary am-btn-xs">放弃保存</button>
+					</div>
+				</form>
+			</div>
+			<div class="am-tab-panel am-fade" id="tab3">
+				 <div class="am-g">
+      <div class="am-u-sm-12">
+        <table class="am-table am-table-bd am-table-striped admin-content-table">
+          <thead>
+          <tr>
+            <th>ID</th><th>类型</th><th>添加日期</th><th>管理</th>
+          </tr>
+          </thead>
+          <tbody>
+          {% for obj in type %}
+          <tr><td>{{ obj.id }}</td><td><span class="am-badge am-badge-secondary">{{ obj.linkurl }}</span></td><td><a href="#">{{ obj.add_time }}</a></td><td><a href="#">{{ obj.linkname }}</a></td> 
+            <td>
+              <div class="am-dropdown" data-am-dropdown>
+                <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                <ul class="am-dropdown-content">
+                  <li><a href="/admin/editLink?id={{obj.id}}">1. 编辑</a></li>
+                  <li><a href="/admin/delLink?id={{obj.id}}">2. 删除</a></li>                
+                </ul>
+              </div>
+            </td>
+          </tr>
+          {% endfor %}
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+			</div>
+		</div>
+	</div>
+	<!--  div class="am-margin">
+    <button type="button" class="am-btn am-btn-primary am-btn-xs">提交保存</button>
+    <button type="button" class="am-btn am-btn-primary am-btn-xs">放弃保存</button>
+  </div>-->
+</div>
+
+{% endblock %}

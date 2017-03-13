@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>Blog | Amaze UI Example</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <link rel="alternate icon" type="image/png" href="{{ url_for('static',filename='i/favicon.png')}}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/amazeui.min.css')}}"/>
+  <style>
+    @media only screen and (min-width: 1200px) {
+      .blog-g-fixed {
+        max-width: 1200px;
+      }
+    }
+
+    @media only screen and (min-width: 641px) {
+      .blog-sidebar {
+        font-size: 1.4rem;
+      }
+    }
+
+    .blog-main {
+      padding: 20px 0;
+    }
+
+    .blog-title {
+      margin: 10px 0 20px 0;
+    }
+
+    .blog-meta {
+      font-size: 14px;
+      margin: 10px 0 20px 0;
+      color: #222;
+    }
+
+    .blog-meta a {
+      color: #27ae60;
+    }
+
+    .blog-pagination a {
+      font-size: 1.4rem;
+    }
+
+    .blog-team li {
+      padding: 4px;
+    }
+
+    .blog-team img {
+      margin-bottom: 0;
+    }
+
+    .blog-content img,
+    .blog-team img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .blog-footer {
+      padding: 10px 0;
+      text-align: center;
+    }
+    
+   
+
+#div1 {position:relative; width:450px; height:450px; margin: 20px auto 0; }
+#div1 a {position:absolute; top:0px; left:0px; font-family: Microsoft YaHei; color:#fff; font-weight:bold; text-decoration:none; padding: 3px 6px; }
+#div1 a:hover {border: 1px solid #eee; background: #000; }
+#div1 .blue {color:blue;}
+#div1 .red {color:red;}
+#div1 .yellow {color:yellow;}
+p { font: 16px Microsoft YaHei; text-align: center; color: #ba0c0c; }
+p a { font-size: 14px; color: #ba0c0c; }
+p a:hover { color: red; }
+p a:hover {color:red; }
+
+  </style>
+</head>
+<body>
+<script type="text/javascript" src="{{ url_for('static',filename='js/miaov.js')}}"></script>
+<script src="http://echarts.baidu.com/doc/asset/js/jquery.min.js"></script>
+    <script src="http://echarts.baidu.com/doc/asset/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static',filename='echarts/echarts.js')}}"></script>
+    <script type="text/javascript">
+        require.config({ paths: { echarts: '/static/echarts' }});
+        option = {
+            title: {
+                text: '',
+                link: 'http://www.google.com/trends/hottrends'
+            },
+            tooltip: {
+                show: true
+            },
+            series: [{
+                name: 'Google Trends',
+                type: 'wordCloud',
+                size: ['80%', '80%'],
+                textRotation : [0, 45, 90, -45],
+                textPadding: 0,
+                autoSize: {
+                    enable: true,
+                    minSize: 14
+                },
+                data: [
+                       {
+                           name: "Sam S Club",
+                           value: 10000,
+                           itemStyle: {
+                               normal: {
+                                   color: 'red'
+                               }
+                           }
+                       },
+                       {
+                           name: "Macys",
+                           value: 6181,
+                           itemStyle: createRandomItemStyle()
+                       },
+                       {
+                           name: "Amy Schumer",
+                           value: 4386,
+                           itemStyle: createRandomItemStyle()
+                       },
+                       {
+                           name: "Jurassic World",
+                           value: 4055,
+                           itemStyle: createRandomItemStyle()
+                       },
+                       {
+                           name: "Charter Communications",
+                           value: 2467,
+                           itemStyle: createRandomItemStyle()
+                       },
+                       {
+                           name: "Chick Fil Aksdj康师傅卡萨丁机房",
+                           value: 2244,
+                           itemStyle: {normal: 
+							{
+								color:"rgb(23,153,45)"
+							}
+						}
+
+                       },
+                       {
+                           name: "Planet Fitness",
+                           value: 1898,
+                           itemStyle: createRandomItemStyle()
+                       },
+                       {
+                           name: "Pitch Perfect",
+                           value: 1484,
+                           itemStyle: createRandomItemStyle()
+                       },
+                       {
+                           name: "Express",
+                           value: 1112,
+                           itemStyle: createRandomItemStyle()
+                       },
+                       {
+                           name: "Home",
+                           value: 965,
+                           itemStyle: createRandomItemStyle()
+                       },
+                       {
+                           name: "Johnny Depp",
+                           value: 8427,
+                           itemStyle: createRandomItemStyle()
+                       },
+                       {
+                           name: "Lena Dunham",
+                           value: 5822,
+                           itemStyle: createRandomItemStyle()
+                       },
+                       {
+                           name: "Lewis Hamilton",
+                           value: 5525,
+                           itemStyle: createRandomItemStyle()
+                       },
+                       {
+                           name: "KXAN",
+                           value: 5530,
+                           itemStyle: createRandomItemStyle()
+                       },
+                       {
+                           name: "Mary Ellen Mark",
+                           value: 4612,
+                           itemStyle: createRandomItemStyle()
+                       },
+                       {
+                           name: "Farrah Abraham",
+                           value: 3666,
+                           itemStyle: createRandomItemStyle()
+                       },
+                       {
+                           name: "Rita Ora",
+                           value: 3640,
+                           itemStyle: createRandomItemStyle()
+                       },
+                       {
+                           name: "Serena Williams",
+                           value: 2842,
+                           itemStyle: createRandomItemStyle()
+                       },
+                       {
+                           name: "NCAA baseball tournament",
+                           value: 2473,
+                           itemStyle: createRandomItemStyle()
+                       },
+                       {
+                           name: "Point Break",
+                           value: 2645,
+                           itemStyle: createRandomItemStyle()
+                       }
+                   ]
+               }]
+           };
+        require(
+            [
+                'echarts',
+                'echarts/chart/wordCloud'
+            ],
+            function (ec) {
+                var myChart = ec.init(document.getElementById('main'));
+                myChart.setOption(option);
+            }
+        )
+
+
+        function createRandomItemStyle() {
+            return {
+                normal: {
+                    color: 'rgb(' + [
+                        Math.round(Math.random() * 160),
+                        Math.round(Math.random() * 160),
+                        Math.round(Math.random() * 160)
+                    ].join(',') + ')'
+                }
+            };
+        }
+    </script>
+<header class="am-topbar">
+  <h1 class="am-topbar-brand">
+    <a href="/blog/">blog</a>
+  </h1>
+
+  <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only"
+          data-am-collapse="{target: '#doc-topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span
+      class="am-icon-bars"></span></button>
+
+  <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
+    <ul class="am-nav am-nav-pills am-topbar-nav">
+      <li class="am-active"><a href="/blog/">首页</a></li>
+      
+      {% for obj in menu %}
+      <li ><a href="/blog/post/{{obj.id}}">{{obj.name}}</a></li>
+      {% endfor %}
+      <li class="am-dropdown" data-am-dropdown>
+        <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
+          菜单 <span class="am-icon-caret-down"></span>
+        </a>
+        <ul class="am-dropdown-content">
+          <li class="am-dropdown-header">标题</li>
+          <li><a href="#">关于我们</a></li>
+          <li><a href="#">关于字体</a></li>
+          <li><a href="#">TIPS</a></li>
+        </ul>
+      </li>
+       <li><a href="/blog/me">关于我</a></li>
+    </ul>
+
+    <form class="am-topbar-form am-topbar-left am-form-inline am-topbar-right" role="search">
+      <div class="am-form-group">
+        <input type="text" class="am-form-field am-input-sm" placeholder="搜索文章">
+      </div>
+      <button type="submit" class="am-btn am-btn-default am-btn-sm">搜索</button>
+    </form>
+
+  </div>
+</header>
+
+<div class="am-g am-g-fixed blog-g-fixed">
+  <div class="am-u-md-8">
+ 
+   {% block content %}{% endblock %}
+    
+    <ul class="am-pagination blog-pagination">
+    	{% if paginate.has_prev %} 
+      <li class="am-pagination-prev"><a href="/blog/blog?page={{ paginate.prev_num }}">&laquo; 上一页</a></li>
+      {% endif %}
+      
+      {% for i in range(total):%}
+		<li class="am-pagination-prev">	<a href="/blog/blog?page={{i+1}}">{{i+1}}</a></li>
+	  {%endfor%}
+      
+      {% if paginate.has_next %} 
+      <li class="am-pagination-next"> <a href="/blog/blog?page={{ paginate.next_num }}">下一页 &raquo;</a></li>
+      {% endif %}
+    </ul>
+  </div>
+
+  <div class="am-u-md-4 blog-sidebar">
+    <div class="am-panel-group">
+      <section class="am-panel am-panel-default">
+        <div class="am-panel-hd">关于我</div>
+        <div class="am-panel-bd">
+          {{ about[:100] | safe  }}
+          <p>
+          <a class="am-btn am-btn-success am-btn-sm" href="/blog/me">查看更多 →</a>
+        </div>
+      </section>
+      <section class="am-panel am-panel-default">
+        <div class="am-panel-hd">文章目录</div>
+        <ul class="am-list blog-list">
+        {% for obj in blogL %}
+          <li><a href="/blog/article?id={{ obj.id }}">{{ obj.title}}</a></li>        
+         {% endfor %}
+        </ul>
+      </section>
+	  <section class="am-panel am-panel-default">
+        <div class="am-panel-hd">归档目录</div>
+        <ul class="am-list blog-list">
+        {% 	for obj in artstyle %}
+          <li><a href="/blog/post/{{ obj.id }}">{{ obj.name}} ({{obj[2]}})</a></li>        
+         {% endfor %}
+        </ul>
+      </section>
+      <!-- 
+      <section class="am-panel am-panel-default">
+        <div class="am-panel-hd">团队成员</div>
+        <div class="am-panel-bd">
+          <ul class="am-avg-sm-4 blog-team">
+            <li><img class="am-thumbnail"
+                     src="http://img4.duitang.com/uploads/blog/201406/15/20140615230220_F5LiM.thumb.224_0.jpeg" alt=""/>
+            </li>
+          </ul>
+        </div>
+      </section>
+       -->
+      <section class="am-panel am-panel-default">
+        <div class="am-panel-hd">标签如云</div>
+        <!-- 
+        <div id="main" style="height:200px;width:100%"></div>
+         -->
+        <ul class="am-list blog-list">
+        
+         <div id="div1" style="height:200px;width:100%">
+         {% 	for biaoqian in blogL %}
+	<a href="/blog/article?id={{biaoqian.id}}" class="blue">{{biaoqian.label}}</a>
+		{% endfor %}
+</div>
+        </ul>
+      </section>
+      <section class="am-panel am-panel-default">
+        <div class="am-panel-hd">友情链接</div>
+        <ul class="am-list blog-list">
+        	{% for frilink in link %}
+          <li><a href="{{ frilink.linkurl}}">{{ frilink.linkname }}</a></li>  
+            {% endfor %}      
+        </ul>
+      </section>
+       <section class="am-panel am-panel-default">
+        <div class="am-panel-hd">管理后台</div>
+        <ul class="am-list blog-list">
+        
+          <li><a href="/admin/"</a>管理系统</li>        
+         
+        </ul>
+      </section>
+    </div>
+  </div>
+
+</div>
+
+<footer class="blog-footer">
+  <p>blog template<br/>
+    <small>© Copyright Power. By PyShell.</small>
+  </p>
+</footer>
+
+<!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="{{ url_for('static',filename='js/jquery.min.js')}}"></script>
+<!--<![endif]-->
+<script src="{{ url_for('static',filename='js/amazeui.min.js')}}"></script>
+
+</body>
+</html>

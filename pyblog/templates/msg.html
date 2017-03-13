@@ -1,0 +1,162 @@
+
+<!doctype html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Hello Amaze UI</title>
+
+<!-- Set render engine for 360 browser -->
+<meta name="renderer" content="webkit">
+
+<!-- No Baidu Siteapp-->
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<link rel="icon" type="image/png"
+	href="{{ url_for('static',filename='i/favicon.png')}}">
+
+<!-- Add to homescreen for Chrome on Android -->
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="icon" sizes="192x192"
+	href="{{ url_for('static',filename='i/app-icon72x72@2x.png')}}">
+
+<!-- Add to homescreen for Safari on iOS -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Amaze UI" />
+<link rel="apple-touch-icon-precomposed"
+	href="{{ url_for('static',filename='i/app-icon72x72@2x.png')}}">
+
+<!-- Tile icon for Win8 (144x144 + tile color) -->
+<meta name="msapplication-TileImage"
+	content="{{ url_for('static',filename='i/app-icon72x72@2x.png')}}">
+<meta name="msapplication-TileColor" content="#0e90d2">
+
+<link rel="stylesheet"
+	href="{{ url_for('static',filename='css/amazeui.min.css')}}">
+<link rel="stylesheet"
+	href="{{ url_for('static',filename='css/app.css')}}">
+
+</head>
+<body>
+
+
+<div class="am-g">
+  <div class="am-u-lg-3">
+    <span class="am-show-md-down"> </span>
+    <span class="am-show-lg-only">lg-3<a href="https://chedaihui.com/11500/reg.html"><img alt="" src="{{ url_for('static',filename='image/chedaihui.png')}}"></a></span>
+  </div>
+  <div class="am-u-lg-6">
+  <form class="am-form" method='post' action='/textmsg'>
+		<div class="am-g doc-am-g">
+			<div class=am-form-group>
+				<div class=am-u-sm-9>
+					<div class="am-form-group">
+						<label for="doc-ipt-email-1">邮箱</label> <input type="email"
+							class="" id="doc-ipt-email-1" placeholder="输入电子邮件">
+					</div>
+					<div class="am-form-group">
+						<label for="doc-ta-1">请输入您的留言</label>
+						<textarea class="" rows="7" id="doc-ta-1" name='textmsg'></textarea>
+					</div>
+					<p>
+						<input type=submit class="am-btn am-btn-default" value='提交'>
+						<input type=reset class="am-btn am-btn-default" value='重置'>
+					</p>
+				</div>
+			</div>
+		</div>
+	</form>
+    <!--span class="am-show-md-down">sm-full</span>
+    <span class="am-show-lg-only">lg-6</span-->
+  </div>
+  <div class="am-u-lg-3">
+    <span class="am-show-md-down">sm-full</span>
+    <span class="am-show-lg-only"><a href="http://onptp.com/promote.php?id=world77@163.com"><img alt="" src="{{ url_for('static',filename='image/onptp.png')}}"></a></span>
+  </div>
+</div>
+
+<div data-am-widget="gotop" class="am-gotop am-gotop-default" >
+    <a href="#top" title="回到顶部">
+        <span class="am-gotop-title">回到顶部</span>
+          <i class="am-gotop-icon am-icon-chevron-up"></i>
+    </a>
+  </div>
+
+<div data-am-widget="gotop" class="am-gotop am-gotop-fixed" >
+    <a href="#top" title="回到顶部">
+        <span class="am-gotop-title">回到顶部</span>
+          <i class="am-gotop-icon am-icon-chevron-up"></i>
+    </a>
+  </div>
+
+	
+	
+	<!--在这里编写你的代码-->
+
+
+
+	<!--[if (gte IE 9)|!(IE)]><!-->
+	<script src="{{ url_for('static',filename='js/jquery.min.js')}}"></script>
+	<!--<![endif]-->
+	<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="{{ url_for('static',filename='js/amazeui.ie8polyfill.min.js')}}"></script>
+<![endif]-->
+	<script src="{{ url_for('static',filename='js/amazeui.min.js')}}"></script>
+
+
+
+
+<!-- foot html page content -->
+
+<footer data-am-widget="footer"
+          class="am-footer am-footer-default"
+           data-am-footer="{  }">
+    <div class="am-footer-switch">
+    <span class="am-footer-ysp" data-rel="mobile"
+          data-am-modal="{target: '#am-switch-mode'}">
+          云适配版
+    </span>
+      <span class="am-footer-divider"> | </span>
+      <a id="godesktop" data-rel="desktop" class="am-footer-desktop" href="javascript:">
+          电脑版
+      </a>
+    </div>
+    <div class="am-footer-miscs ">
+
+          <p>由 <a href="http://www.yunshipei.com/" title="诺亚方舟"
+                                                target="_blank" class="">诺亚方舟</a>
+            提供技术支持</p>
+        <p>CopyRight©2014  AllMobilize Inc.</p>
+        <p>京ICP备13033158</p>
+    </div>
+  </footer>
+
+  <div id="am-footer-modal"
+       class="am-modal am-modal-no-btn am-switch-mode-m am-switch-mode-m-default">
+    <div class="am-modal-dialog">
+      <div class="am-modal-hd am-modal-footer-hd">
+        <a href="javascript:void(0)" data-dismiss="modal" class="am-close am-close-spin " data-am-modal-close>&times;</a>
+      </div>
+      <div class="am-modal-bd">
+          您正在浏览的是
+
+        <span class="am-switch-mode-owner">
+            云适配
+        </span>
+
+        <span class="am-switch-mode-slogan">
+              为您当前手机订制的移动网站。
+        </span>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

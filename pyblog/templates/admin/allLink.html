@@ -1,0 +1,36 @@
+
+{% extends 'base.html' %} {% block content %}
+<div class="admin-content">
+<div class="am-cf am-padding">
+		<div class="am-fl am-cf">
+			<strong class="am-text-primary am-text-lg">文章类别</strong> / <small>全部文章</small>
+		</div>
+	</div>
+ <div class="am-u-sm-12">
+        <table class="am-table am-table-bd am-table-striped admin-content-table">
+          <thead>
+          <tr>
+            <th>ID</th><th>标题</th><th>添加日期</th><th>管理</th>
+          </tr>
+          </thead>
+          <tbody>
+          {% for obj in type %}
+          <tr><td>{{ obj.id }}</td><td><span class="am-badge am-badge-secondary">{{ obj.linkurl }}</span></td><td><a href="#">{{ obj.add_time }}</a></td><td><a href="#">{{ obj.linkname }}</a></td> 
+            <td>
+              <div class="am-dropdown" data-am-dropdown>
+                <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                <ul class="am-dropdown-content">
+                  <li><a href="/admin/editLink?id={{obj.id}}">1. 编辑</a></li>
+                  <li><a href="/admin/delLink?id={{obj.id}}">2. 删除</a></li>                
+                </ul>
+              </div>
+            </td>
+          </tr>
+          {% endfor %}
+
+          </tbody>
+        </table>
+      </div>
+      </div>
+      {% endblock %}
+      

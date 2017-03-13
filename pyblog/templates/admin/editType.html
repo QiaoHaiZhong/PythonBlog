@@ -1,0 +1,43 @@
+{% extends 'base.html' %} {% block content %}
+
+<!-- content start -->
+<div class="admin-content">
+
+	<div class="am-cf am-padding">
+		<div class="am-fl am-cf">
+			<strong class="am-text-primary am-text-lg">文章类别</strong> / <small>编辑类别</small>
+		</div>
+	</div>
+
+	<div class="am-tabs am-margin" data-am-tabs>
+		<ul class="am-tabs-nav am-nav am-nav-tabs">
+			<li><a href="#tab2">修改类别</a></li>
+			
+		</ul>
+		<div class="am-tabs-bd">
+			<div class="am-tab-panel am-fade" id="tab2">
+				<form class="am-form" method='post' action='/admin/updateType'>
+					<div class="am-g am-margin-top">
+						<div class="am-u-sm-4 am-u-md-2 am-text-right">文章类别</div>
+						<div class="am-u-sm-8 am-u-md-4">
+							<input type="hidden" name="type_id" value="{{id}}" >
+							<input type="text" class="am-input-sm" name="type" value="{{name}}">
+						</div>
+						<div class="am-hide-sm-only am-u-md-6">必填</div>
+					</div>
+					<div class="am-margin">
+						<button type="submit" class="am-btn am-btn-primary am-btn-xs">提交保存</button>
+						<button type="reset" class="am-btn am-btn-primary am-btn-xs">放弃保存</button>
+					</div>
+				</form>
+			</div>
+			
+		</div>
+	</div>
+	<!--  div class="am-margin">
+    <button type="button" class="am-btn am-btn-primary am-btn-xs">提交保存</button>
+    <button type="button" class="am-btn am-btn-primary am-btn-xs">放弃保存</button>
+  </div>-->
+</div>
+
+{% endblock %}

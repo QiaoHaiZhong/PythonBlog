@@ -1,0 +1,234 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Amaze UI Admin index Examples</title>
+  <meta name="description" content="这是一个 index 页面">
+  <meta name="keywords" content="index">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link rel="icon" type="image/png" href="{{ url_for('static',filename='i/favicon.png')}}">
+  <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+  <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+  <link rel="stylesheet" href="{{url_for('static',filename='css/amazeui.min.css')}}"/>
+  <link rel="stylesheet" href="{{url_for('static',filename='css/admin.css')}}">
+</head>
+<body>
+<!--[if lte IE 9]>
+<p class="browsehappy">你正在使用<strong>过时</strong>的浏览器，Amaze UI 暂不支持。 请 <a href="http://browsehappy.com/" target="_blank">升级浏览器</a>
+  以获得更好的体验！</p>
+<![endif]-->
+
+<header class="am-topbar admin-header">
+  <div class="am-topbar-brand">
+    <strong>上海嫣红</strong> <small>后台管理模板</small>
+  </div>
+
+  <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
+
+  <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
+
+    <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
+      <li><a href="javascript:;"><span class="am-icon-envelope-o"></span> 收件箱 <span class="am-badge am-badge-warning">5</span></a></li>
+      <li class="am-dropdown" data-am-dropdown>
+        <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
+          <span class="am-icon-users"></span> 管理员 <span class="am-icon-caret-down"></span>
+        </a>
+        <ul class="am-dropdown-content">
+          <li><a href="#"><span class="am-icon-user"></span> 资料</a></li>
+          <li><a href="#"><span class="am-icon-cog"></span> 设置</a></li>
+          <li><a href="#"><span class="am-icon-power-off"></span> 退出</a></li>
+        </ul>
+      </li>
+      <li class="am-hide-sm-only"><a href="javascript:;" id="admin-fullscreen"><span class="am-icon-arrows-alt"></span> <span class="admin-fullText">开启全屏</span></a></li>
+    </ul>
+  </div>
+</header>
+
+<div class="am-cf admin-main">
+  <!-- sidebar start -->
+  <div class="admin-sidebar am-offcanvas" id="admin-offcanvas">
+    <div class="am-offcanvas-bar admin-offcanvas-bar">
+      <ul class="am-list admin-sidebar-list">
+        <li><a href="home"><span class="am-icon-home"></span> 首页</a></li>
+        <li class="admin-parent">
+          <a class="am-cf" data-am-collapse="{target: '#collapse-nav'}"><span class="am-icon-file"></span> 酷我秀场 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+          <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav">
+            <li><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span>当天冲兑收入<span class="am-icon-star am-fr am-margin-right admin-icon-yellow"></span></a></li>
+            <li><a href="/query"><span class="am-icon-puzzle-piece"></span> 捕鱼卡币查询</a></li>
+            <li><a href="/cbquery"><span class="am-icon-th"></span>猜宝卡币查询<span class="am-badge am-badge-secondary am-margin-right am-fr">24</span></a></li>
+            <li><a href="/buyupearl"><span class="am-icon-calendar"></span>掉线补珍珠</a></li>
+            <li><a href="admin-404.html"><span class="am-icon-bug"></span> 404</a></li>
+          </ul>
+        </li>
+        <li><a href="admin-table.html"><span class="am-icon-table"></span> 呱呱</a></li>
+        <li><a href="admin-form.html"><span class="am-icon-pencil-square-o"></span> 龙珠</a></li>
+        <li><a href="#"><span class="am-icon-sign-out"></span> 官网</a></li>
+      </ul>
+
+      <div class="am-panel am-panel-default admin-sidebar-panel">
+        <div class="am-panel-bd">
+          <p><span class="am-icon-bookmark"></span> 公告</p>
+          <p>时光静好，与君语；细水流年，与君同。—— Amaze UI</p>
+        </div>
+      </div>
+
+      <div class="am-panel am-panel-default admin-sidebar-panel">
+        <div class="am-panel-bd">
+          <p><span class="am-icon-tag"></span> wiki</p>
+          <p>Welcome to the Amaze UI wiki!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- sidebar end -->
+
+  <!-- content start -->
+  <div class="admin-content">
+
+    <div class="am-cf am-padding">
+      <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">上海嫣红</strong> / <small>酷我秀场捕鱼2卡币查询</small></div>
+    </div>
+
+    <!--ul class="am-avg-sm-1 am-avg-md-5 am-margin am-padding am-text-center admin-content-list ">
+      <li><a href="#" class="am-text-success"><span class="am-icon-btn am-icon-file-text"></span><br/>新增用户<br/>2300</a></li>
+      <li><a href="#" class="am-text-warning"><span class="am-icon-btn am-icon-briefcase"></span><br/>今日充值<br/>308</a></li>
+      <li><a href="#" class="am-text-danger"><span class="am-icon-btn am-icon-recycle"></span><br/>今日兑换<br/>80082</a></li>
+	  <li><a href="#" class="am-text-danger"><span class="am-icon-btn am-icon-recycle"></span><br/>当前盈利<br/>80082</a></li>
+      <li><a href="#" class="am-text-secondary"><span class="am-icon-btn am-icon-user-md"></span><br/>在线用户<br/>3000</a></li>
+    </ul-->
+
+    <div class="am-g">
+      <div class="am-u-sm-12">
+        
+      </div>
+    </div>
+<div class="am-g doc-am-g">
+		<div class="am-u-sm-6 am-u-md-4 am-u-lg-1"> &nbsp;&nbsp;&nbsp;&nbsp;</div> <!-- 这一行其实是用来布局的左右分布 -->
+		<div class="am-u-sm-6 am-u-md-8 am-u-lg-12">
+			<p>酷我秀场捕鱼2卡币查询</p>
+			<label for="doc-ta-1">&nbsp;&nbsp;&nbsp;&nbsp;请输入查询日期</label>
+			<form method='post' action='/oneTime'>
+				<div class="am-g doc-am-g">
+					<div class=am-form-group>
+						<div class=am-u-sm-4>
+
+							<div class="am-input-group am-datepicker-date"
+								data-am-datepicker="{format: 'yyyy-mm-dd', viewMode: 'years'}">
+								<input type="text" class="am-form-field" name="oneStartTime"
+									placeholder="开始日期   yyyy-mm-dd"> <span
+									class="am-input-group-btn am-datepicker-add-on">
+									<button class="am-btn am-btn-default" type="button">
+										<span class="am-icon-calendar"></span>
+									</button>
+								</span>
+							</div>
+						</div>
+						<div class=am-u-sm-8>
+							<input id=search type=submit class="am-btn am-btn-default"
+								value='查询'> <input id=reset type=reset
+								class="am-btn am-btn-default" value='重置'>
+						</div>
+					</div>
+				</div>
+			</form>
+
+			
+			<label for="doc-ta-1">&nbsp;&nbsp;&nbsp;&nbsp;请输入查询日期</label>
+			<form method='post' action='/twoTime'>
+				<div class="am-g doc-am-g">
+					<div class=am-form-group>
+						<div class=am-u-sm-4>
+							<div class="am-input-group am-datepicker-date"
+								data-am-datepicker="{format: 'yyyy-mm-dd', viewMode: 'years'}">
+								<input type="text" class="am-form-field" id="my-start"
+									name="twoStartTime" placeholder="开始日期   yyyy-mm-dd" readonly>
+								<span class="am-input-group-btn am-datepicker-add-on">
+									<button class="am-btn am-btn-default" type="button">
+										<span class="am-icon-calendar"></span>
+									</button>
+								</span>
+							</div>
+							<div class="am-input-group am-datepicker-date"
+								data-am-datepicker="{format: 'yyyy-mm-dd', viewMode: 'years'}">
+								<input type="text" class="am-form-field" name="twoEndTime"
+									placeholder="结束日期   yyyy-mm-dd" readonly> <span
+									class="am-input-group-btn am-datepicker-add-on">
+									<button class="am-btn am-btn-default" type="button">
+										<span class="am-icon-calendar"></span>
+									</button>
+								</span>
+							</div>
+
+						</div>
+						<div class=am-u-sm-8>
+							<input type=submit class="am-btn am-btn-default" value='查询'>
+							<input type=reset class="am-btn am-btn-default" value='重置'>
+						</div>
+					</div>
+				</div>
+			</form>
+			<hr>
+			<hr>
+			<form class="am-form" method='post' action='/textSql'>
+				<div class="am-g doc-am-g">
+					<div class=am-form-group>
+						<div class=am-u-sm-5>
+							<div class="am-form-group">
+								<label for="doc-ta-1">请输入你想查询的SQL</label>
+								<textarea class="" rows="8" id="doc-ta-1" name="textSql"></textarea>
+							</div>
+							<p>
+								<input type=submit class="am-btn am-btn-default" value='查询'>
+								<input type=reset class="am-btn am-btn-default" value='重置'>
+							</p>
+						</div>
+					</div>
+				</div>
+			</form>
+			<!--在这里编写你的代码-->
+			
+			
+		<div></div>
+
+
+		<!--[if (gte IE 9)|!(IE)]><!-->
+		<script src="{{ url_for('static',filename='js/jquery.min.js')}}"></script>
+		<!--<![endif]-->
+		<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="{{ url_for('static',filename='js/amazeui.ie8polyfill.min.js')}}"></script>
+<![endif]-->
+		<script src="{{ url_for('static',filename='js/amazeui.min.js')}}"></script>
+   
+  </div>
+  <!-- content end -->
+
+
+</div>
+
+<a href="#" class="am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}">
+  <span class="am-icon-btn am-icon-th-list"></span>
+</a>
+
+<footer>
+  <hr>
+  <p class="am-padding-left">© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
+</footer>
+
+<!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="{{url_for('static',filename='js/jquery.min.js')}}"></script>
+<!--<![endif]-->
+<script src="{{url_for('static',filename='js/amazeui.min.js')}}"></script>
+<script src="{{url_for('static',filename='js/app.js')}}"></script>
+</body>
+</html>

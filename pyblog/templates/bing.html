@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>Highcharts 教程 | 菜鸟教程(runoob.com)</title>
+<meta charset="UTF8" />
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="{{ url_for('static',filename='highcharts/js/highcharts.js')}}"></script>
+</head>
+<body>
+	<div id="container" style="width: 550px; height: 400px; margin: 0 auto"></div>
+	<script language="JavaScript">
+		$(document)
+				.ready(
+						function() {
+							var chart = {
+								plotBackgroundColor : null,
+								plotBorderWidth : null,
+								plotShadow : false
+							};
+							var title = {
+								text : '玩家IP来源比例'
+							};
+							var tooltip = {
+								pointFormat : '{series.name}: <b>{point.percentage:.1f}%</b>'
+							};
+							var plotOptions = {
+								pie : {
+									allowPointSelect : true,
+									cursor : 'pointer',
+									dataLabels : {
+										enabled : true,
+										format : '<b>{point.name}%</b>: {point.percentage:.1f} %',
+										style : {
+											color : (Highcharts.theme && Highcharts.theme.contrastTextColor)
+													|| 'black'
+										}
+									}
+								}
+							};
+							
+
+							var series = [ {
+								type : 'pie',
+								name : '游客 来源',
+								data : {{ abcde | safe }}
+							} ];
+
+							var json = {};
+							json.chart = chart;
+							json.title = title;
+							json.tooltip = tooltip;
+							json.series = series;
+							json.plotOptions = plotOptions;
+							$('#container').highcharts(json);
+						});
+	</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{% extends 'blogBase.html' %}
+{% block content %}
+  {% for obj in blogArticle %}
+    <article class="blog-main">
+      <h3 class="am-article-title blog-title">
+        <a href="/blog/article?id={{ obj.id }}">{{ obj.title }}</a>
+      </h3>
+      <h4 class="am-article-meta blog-meta"> 提交时间： {{ obj.pub_date }} 标签： <a href="#">{{ obj.label }}</a></h4>
+
+      <div class="am-g blog-content">
+        <div class="am-u-lg-27">
+          {{ obj.body[:500] | safe }}
+        </div>
+         
+        <div class="am-u-lg-5">
+         
+      <a class="am-btn am-btn-success am-btn-sm" href="/blog/article?id={{ obj.id }}">查看更多 →</a>
+      </div>
+      </div>
+    </article>
+
+    <hr class="am-article-divider blog-hr">
+   {% endfor %}
+   
+    
+   {% endblock %}
